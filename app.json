@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "ThreeEncprytionEducation",
+    "slug": "ThreeEncprytionEducation",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "ThreeEncprytionEducation"
+}
