@@ -1,14 +1,4 @@
 {
-  "expo": {
-    "name": "ThreeEncprytionEducation",
-    "slug": "ThreeEncprytionEducation",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "bundleIdentifier": "edu"
-    }
-  },
-  "name": "ThreeEncprytionEducation"
+  "name": "freshReactNativeApp",
+  "displayName": "freshReactNativeApp"
 }

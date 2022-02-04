@@ -1,36 +1,38 @@
 {
-  "name": "threeencprytioneducation",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "freshreactnativeapp",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
-    "start": "expo start --dev-client"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@react-navigation/native": "^6.0.6",
-    "@react-navigation/native-stack": "^6.2.5",
-    "expo": "~43.0.0",
-    "expo-cli": "^5.0.3",
-    "expo-splash-screen": "~0.13.3",
-    "expo-status-bar": "~1.1.0",
-    "expo-updates": "~0.10.13",
-    "global": "^4.4.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-native": "0.64.3",
-    "react-native-gesture-handler": "~1.10.2",
-    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react": "17.0.2",
+    "react-native": "0.67.2",
     "react-native-reanimated": "~2.2.0",
-    "react-native-safe-area-context": "3.3.2",
-    "react-native-screens": "~3.8.0",
-    "react-native-super-grid": "^4.1.3",
-    "react-native-table-component": "^1.2.1",
-    "react-native-web": "0.17.1"
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.2",
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.17.0",
+    "@babel/runtime": "^7.17.0",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.4.1",
+    "babel-jest": "^27.4.6",
+    "eslint": "^8.8.0",
+    "jest": "^27.4.7",
+    "metro-react-native-babel-preset": "^0.67.0",
+    "react-native-gesture-handler": "^2.2.0",
+    "react-native-super-grid": "^4.2.0",
+    "react-native-table-component": "^1.2.1",
+    "react-test-renderer": "17.0.2"
   },
-  "private": true
+  "jest": {
+    "preset": "react-native"
+  }
 }

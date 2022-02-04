@@ -1,3 +1,4 @@
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/screens/Home'
@@ -5,8 +6,7 @@ import AcademicResults from './src/screens/AcademicResults'
 import PaymentDetails from './src/screens/PaymentDetails'
 import Timetable from './src/screens/Timetable'
 import Attendance from './src/screens/Attendance'
-import React from "react";
-import NewLogin from "./src/screens/NewLogin";
+import Login from "./src/screens/Login";
 import {Dimensions, Image, Text, View} from 'react-native';
 import userProfile from "./src/images/user_profile.png";
 import notification from "./src/images/notification.png";
@@ -51,7 +51,7 @@ export default function App() {
                     headerShadowVisible: false
                 }}
                 initialRouteName="Login">
-                <Stack.Screen options={{headerShown: false}} name="Login" component={NewLogin}/>
+                <Stack.Screen options={{headerShown: false}} name="Login" component={Login}/>
                 <Stack.Screen
                     name="Home"
                     component={Home}
