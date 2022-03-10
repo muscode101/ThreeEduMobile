@@ -1,36 +1,22 @@
 import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Row, Table} from 'react-native-table-component';
+import {connect} from "react-redux";
 
-const Attendance = ({navigator}) => {
-    const tableHead = ['Date', 'Status', 'Reason'];
+const Attendance = ({navigation,attendance,isAuthenticated}) => {
+    const tableHead = [ 'Reason','Status','Date' ];
     const width = [100, 130, 130];
 
-    const data = [
-        {date: "20/11/2021", status: "absent", reason: "Sick"},
-        {date: "20/05/2021", status: "present", reason: "Math"},
-        {date: "20/04/2021", status: "absent", reason: "Sick"},
-        {date: "20/11/2021", status: "present", reason: "Math"},
-        {date: "20/02/2021", status: "absent", reason: "Sick"},
-        {date: "20/11/2021", status: "present", reason: "Math"},
-        {date: "20/01/2021", status: "absent", reason: "Sick"},
-        {date: "20/10/2021", status: "present", reason: "Math"},
-        {date: "20/12/2021", status: "absent", reason: "Sick"},
-        {date: "20/06/2021", status: "present", reason: "Math"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-        {date: "20/07/2021", status: "absent", reason: "Sick"},
-    ];
+    if (!isAuthenticated) {
+        navigation.navigate('Login')
+    }
+
+    console.log(attendance)
 
     const getData = () => {
         let tableData = []
-        data.forEach((item) => {
-            tableData.push([item.date, item.status, item.reason])
+        Object.entries(attendance).forEach(item => {
+            tableData.push([item[1].reason, item[1].status,item[1].markOn ])
         });
         return tableData
     }
@@ -58,7 +44,14 @@ const Attendance = ({navigator}) => {
     )
 }
 
-export default Attendance;
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.profile.isAuthenticated,
+    attendance: state.profile.user.attendance
+})
+
+export default connect(mapStateToProps, { })(Attendance)
+
 
 const styles = StyleSheet.create({
     container: {
@@ -78,22 +71,24 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#6F7BD9',
+        backgroundColor: 'green',
+        background:'#fff',
         color: '#fff',
     },
-    headerText: {
-        textAlign: 'right',
-        fontWeight: '500',
+    HeaderText: {
+        fontWeight: '900',
+        color: '#fff',
     },
     text: {
         textAlign: 'center',
-        fontWeight: '200'
+        fontWeight: '200',
+        color:'black'
     },
     dataWrapper: {
         marginTop: -1
     },
     row: {
         height: 40,
-        backgroundColor: '#F7F8FA'
+        backgroundColor: '#D6EEEE'
     }
 });

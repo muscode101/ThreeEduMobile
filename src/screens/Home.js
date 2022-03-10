@@ -6,19 +6,24 @@ import imgAttendance from '../images/attendence.png';
 import imgAcademic from '../images/academic.png';
 import imgPayment from '../images/payment.png';
 import imgTimeTable from '../images/time_table.png';
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
 
-const Home = ({route, navigation}) => {
-    const [items, setItems] = React.useState([
+const Home = ({navigation,isAuthenticated,username}) => {
+
+    const [items] = React.useState([
         {name: 'Attendance', icon: '#1abc9c', image: imgAttendance},
         {name: 'Payments', icon: '#2ecc71', image: imgPayment},
         {name: 'Timetable', icon: '#3498db', image: imgTimeTable},
         {name: 'Academics', icon: '#9b59b6', image: imgAcademic},
     ]);
 
-    const {username} = route.params;
-
     const setRoute = item => () => {
-        navigation.navigate(item.name)
+            navigation.navigate(item.name)
+    }
+
+    if (!isAuthenticated) {
+        navigation.navigate('Login')
     }
 
     const MenuView = () => {
@@ -50,7 +55,18 @@ const Home = ({route, navigation}) => {
     );
 };
 
-export default Home;
+Home.propTypes = {
+    isAuthenticated: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired,
+}
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.profile.isAuthenticated,
+    username: state.profile.user.personalInfo.Name
+})
+
+export default connect(mapStateToProps, { })(Home)
+
 const styles = StyleSheet.create({
     root: {
         height: '100%',
