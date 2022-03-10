@@ -9,7 +9,9 @@ import imgTimeTable from '../images/time_table.png';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
-const Home = ({navigation,isAuthenticated,username}) => {
+const Home = ({navigation,isAuthenticated}) => {
+
+
 
     const [items] = React.useState([
         {name: 'Attendance', icon: '#1abc9c', image: imgAttendance},
@@ -29,16 +31,16 @@ const Home = ({navigation,isAuthenticated,username}) => {
     const MenuView = () => {
         return (
             <FlatGrid
-                itemDimension={130}
+                itemDimension={108}
                 data={items}
                 style={styles.gridView}
-                spacing={10}
+                spacing={15}
                 renderItem={({item}) => (
                     <TouchableOpacity
                         onPress={setRoute(item)}
                     >
                         <View  style={[styles.itemContainer, {backgroundColor: item.icon}]}>
-                            <Image style={{width: 100, height: 100}} source={item.image}/>
+                            <Image style={{width: 80, height: 80}} source={item.image}/>
                             <Text style={styles.itemName}>{item.name}</Text>
                         </View>
                     </TouchableOpacity>
@@ -49,7 +51,7 @@ const Home = ({navigation,isAuthenticated,username}) => {
 
     return (
         <View style={styles.root}>
-            <MyHeader username={username}/>
+            <MyHeader />
             <MenuView/>
         </View>
     );
@@ -57,12 +59,10 @@ const Home = ({navigation,isAuthenticated,username}) => {
 
 Home.propTypes = {
     isAuthenticated: PropTypes.func.isRequired,
-    username: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = state => ({
     isAuthenticated: state.profile.isAuthenticated,
-    username: state.profile.user.personalInfo.Name
 })
 
 export default connect(mapStateToProps, { })(Home)
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#faf0f9',
     },
     gridView: {
-        marginTop: 10,
+        marginTop: 0,
         backgroundColor: '#faf0f9',
         flex: 1,
     },

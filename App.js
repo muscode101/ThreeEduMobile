@@ -32,21 +32,22 @@ export default function App() {
                             name="Home"
                             component={Home}
                             options={{
-                                headerTitle: (props) => <LogoTitle />
+                                headerTitle: () => <LogoTitle />
                             }}
                         />
                         <Stack.Screen
                             name="Attendance"
                             component={Attendance}
                             options={{
-                                headerTitle: (props) =><LogoTitle />
+                                headerTitle: () =><LogoTitle />
                             }}
                         />
                         <Stack.Screen
                             name="Timetable"
                             component={Timetable}
-                            options={{
-                                headerTitle: (props) => <LogoTitle />,
+                            options={
+                                {
+                                headerTitle: () => <LogoTitle />,
                                     orientation: 'landscape'
                             }}
                         />
@@ -54,14 +55,14 @@ export default function App() {
                             name="Payments"
                             component={PaymentDetails}
                             options={{
-                                headerTitle: (props) => <LogoTitle />
+                                headerTitle: () => <LogoTitle />
                             }}
                         />
                         <Stack.Screen
                             name="Academics"
                             component={AcademicResults}
                             options={{
-                                headerTitle: (props) => <LogoTitle />
+                                headerTitle: () => <LogoTitle />
                             }}
                         />
                     </Stack.Navigator>
