@@ -1,68 +1,97 @@
-export default  {
-    "classname": "Grade 8 (8 A)",
-    "schoolName": "Lusaka Secondary School",
+export default {
+    "classname": "Grade 10 (10A)",
+    "schoolName": "Amazing Grace",
     "personalInfo": {
-        "StudenNo": "SN2021040",
-        "Name": "Tenant Tenat Nwe",
+        "StudenNo": "SN2021044",
+        "Name": "Minza Munati",
         "ContactNo": "0977100587",
-        "DOB": "01 Jan, 1996",
+        "DOB": "31 Dec, 2003",
         "Address": "Lusaka, Chelenge",
         "Gender": "Male",
-        "MaritalStatus": "Married",
-        "GuardianMaleName": "sdsd",
+        "MaritalStatus": "Single",
+        "GuardianMaleName": "Mwamba Liabwa Banda",
         "GuardianFemaleName": "Mwando",
-        "ProfilePic": "../../uploads/defult.png",
-        "ClassName": "Grade 8 (8 A)",
+        "ProfilePic": "../../uploads/SN2021044_images.png",
+        "ClassName": "Grade 10 (10A)",
         "EmailAddress": "prototype1496@gmail.com",
-        "ClassMasterPublicID": "CLAS0000000004",
-        "PicURL": "../../uploads/shcool_logos/SCHL0000000001_logo.png"
+        "ClassMasterPublicID": "CLAS00000000068",
+        "PicURL": "../../uploads/shcool_logos/defult_school.png"
     },
     "timetable": {
         "monday": [
             "Mathematics",
+            "Mathematics",
             "English",
-            "Scinece",
-            null
+            "English"
         ],
         "tuesday": [
             "English",
-            "Mathematics",
-            "Religious Education",
+            "English",
+            "Biology",
             null
         ],
         "wednesday": [
-            "Scinece",
+            "Chemistry",
+            "Chemistry",
             "Mathematics",
-            "Zambian Language ",
-            "Integrated Science"
+            null
         ],
         "thursday": [
             "Mathematics",
-            "English",
-            "Computer Studies ",
-            "Mathematics"
+            null,
+            "Physics",
+            null
         ],
         "friday": [
-            "English",
-            "English",
-            "Mathematics",
-            "Mathematics"
+            "Physics",
+            "Physics",
+            "Physics",
+            "Physics"
         ],
-
+        "periods": [
+            "Period 1<br>(08:00 - 09:00)",
+            "Period 2<br>(09:00 - 10:00)",
+            "Period 3<br>(10:00 - 11:00)",
+            "Period 4<br>(11:00 - 12:00)"
+        ]
     },
     "attendance": [
         {
-            "studentNo": "SN2021040",
-            "reason": "",
-            "status": "Present",
-            "markOn": "22 Aug, 2021"
-        },
-        {
-            "studentNo": "SN2021040",
+            "studentNo": "SN2021044",
             "reason": "None",
             "status": "Present",
-            "markOn": "16 Jan, 2022"
+            "markOn": "18 Oct, 2021"
+        },
+        {
+            "studentNo": "SN2021044",
+            "reason": "None",
+            "status": "Present",
+            "markOn": "18 Oct, 2021"
+        },  {
+            "studentNo": "SN2021044",
+            "reason": "None",
+            "status": "Present",
+            "markOn": "18 Oct, 2021"
         }
     ],
-    "0": "academicResults"
+    "academicResults": [
+        {
+            "subject": "Biology (BIOL)",
+            "assessmentName": "Class Excises (skeleton)",
+            "score": "5 %",
+            "markedOn": "18 Oct, 2021"
+        },
+        {
+            "subject": "English (ENG)",
+            "assessmentName": "Class Excises (pronouns)",
+            "score": "30 %",
+            "markedOn": "18 Oct, 2021"
+        },
+        {
+            "subject": "Mathematics (MATH)",
+            "assessmentName": "Class Excises (sets)",
+            "score": "85 %",
+            "markedOn": "18 Oct, 2021"
+        }
+    ]
 }

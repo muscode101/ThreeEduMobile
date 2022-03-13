@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 
 const Timetable = ({navigation,timetable,isAuthenticated}) => {
     const tableHead = ['Days',"08:00 - 09:00",'09:00 - 10:00','10:00 - 11:00','11:00 - 12:00'] ;
-    const width = [100, 115, 115,115,115,130];
+    const width = [140, 110, 120,120,120,130];
+    const headerWidth = [100, 115, 115,115,100,100];
 
     if (!isAuthenticated) {
         navigation.navigate('Login')
@@ -21,13 +22,13 @@ const Timetable = ({navigation,timetable,isAuthenticated}) => {
             tableData.push([day,...collection])
         });
         console.log("dayAndSubjects",dayAndSubjects)
-        return tableData
+        return tableData.slice(0, -1)
     }
 
     return (
         <View style={styles.container}>
             <Table borderStyle={{ borderColor: '#C1C0B9'}}>
-                <Row data={tableHead} widthArr={width} style={styles.head} textStyle={styles.HeaderText}/>
+                <Row data={tableHead} widthArr={headerWidth} style={styles.head} textStyle={styles.HeaderText}/>
                 <ScrollView>
                     {
                         getData().map((totalRows, index) => (

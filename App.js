@@ -10,7 +10,6 @@ import Login from "./src/screens/Login";
 import {Provider} from "react-redux";
 import store from "./src/redux/store";
 import LogoTitle from "./src/components/AppBar";
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -32,7 +31,8 @@ export default function App() {
                             name="Home"
                             component={Home}
                             options={{
-                                headerTitle: () => <LogoTitle />
+                                headerTitle: () => <LogoTitle />,
+                                orientation: 'portrait'
                             }}
                         />
                         <Stack.Screen

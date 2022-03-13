@@ -26,15 +26,12 @@ const Login = ({login, isAuthenticated, navigation}) => {
         }
     }
 
-
     if (isAuthenticated) {
         navigation.navigate('Home', {username: username})
     }
 
     return (
-
         <View style={styles.container}>
-
             <View style={styles.imgContainer}>
                 <Image style={styles.image} source={appLogo}/>
             </View>
@@ -59,7 +56,6 @@ const Login = ({login, isAuthenticated, navigation}) => {
             >
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
-
             <View style={styles.forgotPassword}>
                 <TouchableOpacity>
                     <Text>Remember Me</Text>
