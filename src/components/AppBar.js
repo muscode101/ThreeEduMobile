@@ -17,6 +17,7 @@ const LogoTitle = ({schoolName}) =>
             <Text style={{width: '70%', alignSelf: 'center', fontSize: 20,}}>
                 {schoolName}
             </Text>
+
             <TouchableOpacity>
                 <Image
                     style={{width: 42, height: 42, marginBottom: 5, marginRight: 10}}
